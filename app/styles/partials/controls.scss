@@ -1,0 +1,93 @@
+// partials/controls
+
+
+////////////////////
+// Parent classes //
+////////////////////
+
+.controls {
+  direction: rtl;
+  width: 15em;
+  max-width: 100%;
+  padding: $default-margin-sm ($default-margin-sm / 2 * 3);
+  position: relative;
+  box-sizing: border-box;
+  background-color: transparentize(darken($color-bg, 12%), .1);
+  border-radius: .3em;
+  text-align: center;
+  letter-spacing: 0.03em;
+  transition: $default-transition-speed opacity;
+
+  @media only screen and (min-width: map-get($break-points, 'md')) {
+    left: auto;
+    right: $default-margin-sm;
+    top: $default-margin-sm;
+    text-align: right;
+    position: absolute;
+  }
+}
+
+.controls--hide {
+  pointer-events: none;
+  opacity: 0;
+}
+
+
+/////////////////////////////////
+// Children components classes //
+/////////////////////////////////
+
+%controls__component-base {
+  width: 100%;
+  margin: .25em auto;
+  display: block;
+  box-sizing: border-box;
+  border-radius: .3em;
+  text-align: inherit;
+  font-size: inherit;
+  line-height: 1.5;
+  opacity: .7;
+
+  &:focus {
+    opacity: 1;
+    outline: none;
+  }
+}
+
+
+.controls__text-tf {
+  @extend %controls__component-base;
+
+  padding: ($default-margin / 2) ($default-margin / 4 * 3);
+  background: $color-tf-bg;
+  border: 2px solid $color-tf-border;
+  color: $color-tf-text;
+  letter-spacing: inherit;
+  transition:
+    300ms opacity,
+    300ms background,
+    300ms color,
+    300ms border;
+
+  &:focus {
+    color: $color-tf-focus-text;
+    background-color: $color-tf-focus-bg;
+    border-color: $color-tf-focus-border;
+  }
+}
+
+.controls__select {
+  @extend %controls__component-base;
+
+  background: $color-select-bg;
+  border: none;
+  color: $color-select-text;
+}
+
+.controls__fb-share {
+  margin-top: $default-margin;
+  display: block;
+  font-family: 'almoni', sans-serif;
+  line-height: 1;
+  letter-spacing: inherit;
+}

@@ -1,0 +1,72 @@
+// partials/kleid
+
+
+/////////////////////
+// Utility classes //
+/////////////////////
+
+.kleid-frame {
+  position: relative;
+}
+
+
+//////////////////////////////////
+// The container of all letters //
+//////////////////////////////////
+
+.kleid {
+  left: 10%;
+  top: 10%;
+  width: 80%;
+  height: 80%;
+  pointer-events: none;
+}
+
+
+///////////////////
+// Single letter //
+///////////////////
+
+.kleid-item {
+  float: right;
+  font-size: inherit;
+  overflow: hidden;
+}
+
+.kleid-item__content {
+  @extend .fs;
+  @extend .kleid-frame;
+}
+
+%kleid-item__side {
+  left: 0;
+  top: 50%;
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  transform-origin: right top;
+}
+
+.kleid-item__side-1 { @extend %kleid-item__side; transform: rotate(-30deg); }
+.kleid-item__side-2 { @extend %kleid-item__side; transform: rotate(30deg) matrix(-1, 0, 0, 1, 0, 0); }
+.kleid-item__side-3 { @extend %kleid-item__side; transform: rotate(30deg); }
+.kleid-item__side-4 { @extend %kleid-item__side; transform: rotate(90deg) matrix(-1, 0, 0, 1, 0, 0); }
+.kleid-item__side-5 { @extend %kleid-item__side; transform: rotate(90deg); }
+.kleid-item__side-6 { @extend %kleid-item__side; transform: rotate(150deg) matrix(-1, 0, 0, 1, 0, 0); }
+.kleid-item__side-7 { @extend %kleid-item__side; transform: rotate(150deg); }
+.kleid-item__side-8 { @extend %kleid-item__side; transform: rotate(210deg) matrix(-1, 0, 0, 1, 0, 0); }
+.kleid-item__side-9 { @extend %kleid-item__side; transform: rotate(210deg); }
+.kleid-item__side-10{ @extend %kleid-item__side; transform: rotate(270deg) matrix(-1, 0, 0, 1, 0, 0); }
+.kleid-item__side-11{ @extend %kleid-item__side; transform: rotate(270deg); }
+.kleid-item__side-12{ @extend %kleid-item__side; transform: rotate(330deg) matrix(-1, 0, 0, 1, 0, 0); }
+
+.kleid-item__character {
+  left: 100%;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform: rotate(30deg);
+  transform-origin: left top;
+}

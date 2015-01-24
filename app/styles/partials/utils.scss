@@ -1,0 +1,23 @@
+// partials/utils
+
+
+.fs {
+  @include fs;
+}
+
+.reset-box {
+  @include reset-box;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.above {
+  z-index: 9000;
+}
+
+.text-lighter {
+  color: $color-text-light;
+}

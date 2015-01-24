@@ -1,0 +1,22 @@
+{{!-- Kleidoscope --}}
+{{kleid-pattern text=t tabIndex="-1" containerClass="text-lighter stretched"}}
+
+{{!-- The invisible background button to toggle visibility of the controls --}}
+{{prop-toggler property="areControlsVisible" action="toggleProperty" class="stretched"}}
+
+{{!-- BEGIN of CONTROLS --}}
+<section {{bind-attr class=":controls :flex__centered areControlsVisible::controls--hide"}}>
+  {{! Text }}
+  {{input value=text maxlength=tMaxLength dir="rtl" class="controls__text-tf"}}
+  {{! Families select }}
+  {{view "select"
+    value=f
+    content=families
+    optionValuePath="content.0"
+    optionLabelPath="content.1"
+    class="controls__select"
+  }}
+  {{! Facebook share }}
+  {{#fb-share t=t f=f class="controls__fb-share"}}שתפו בפייסבוק!{{/fb-share}}
+</section>
+{{!-- END of CONTROLS --}}

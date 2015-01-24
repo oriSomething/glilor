@@ -1,0 +1,25 @@
+// partials/logo
+
+
+.aaa-link {
+  top: $default-margin;
+  right: $default-margin;
+  width: (75 / 16 * 1em);
+  height: (25 / 16 * 1em);
+  position: fixed;
+
+
+  @media only screen and (min-width: map-get($break-points, 'md')) {
+    display: none;
+  }
+}
+
+.aaa-link__color {
+  fill: $color-link;
+  transition: $default-transition-speed fill;
+
+  .aaa-link:focus &,
+  .aaa-link:hover & {
+    fill: $color-link-hover;
+  }
+}

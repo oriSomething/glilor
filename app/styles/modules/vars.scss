@@ -1,0 +1,48 @@
+// modules/vars
+
+
+// Typography
+$default-font:                          'omes', arial, sans-serif;
+$default-margin:                        0.8em;
+$default-margin-sm:                     0.6em;
+
+
+// Transitions
+$default-transition-speed:              0.25s;
+
+
+// Base Colors
+$color-aaa-red:                         #f23c3c;
+$color-bg:                              #368;
+$color-text:                            mix(#fff, $color-bg);
+$color-text-light:                      lighten($color-text, 12%);
+$color-text-lighter:                    lighten($color-text, 30%);
+
+
+// Links
+$color-link:                            $color-text;
+$color-link-hover:                      $color-text-lighter;
+
+
+// TextFields
+$color-tf-bg:                           $color-bg;
+$color-tf-border:                       $color-text-lighter;
+$color-tf-text:                         $color-text-lighter;
+$color-tf-focus-bg:                     $color-text-lighter;
+$color-tf-focus-border:                 $color-aaa-red;
+$color-tf-focus-text:                   $color-aaa-red;
+
+
+// Selects
+$color-select-bg:                       $color-text-lighter;
+$color-select-text:                     $color-bg;
+
+
+// Fonts
+$fonts-base-uri:                        '../fonts';
+
+
+// Break points
+$break-points:                          (
+                                          md: 1024px
+                                        );

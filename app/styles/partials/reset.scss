@@ -1,0 +1,26 @@
+// partials/reset
+
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-text;
+  font: 100% / 1.5 $default-font;
+}
+
+a {
+  color: $color-link;
+  transition: $default-transition-speed color;
+
+  &:hover,
+  &:focus {
+    color: $color-link-hover;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

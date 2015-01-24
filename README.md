@@ -1,7 +1,11 @@
 # Glilor
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Glilor is a typographic experiment of [ori livni](http://www.orilivni.com) and [alef alef alef](http://www.alefalefalef.co.il).
+You can see it live [here](http://glilor.alefalefalef.co.il).
+
+## Notice
+
+If you run it locally it will fail to load without the fonts which are missing. The reason they are missing, because they are copyright protected. You will have to buy them from [alef alef alef](http://www.alefalefalef.co.il) or replace it with your fonts which will need to update the files: `app/styles/modules/fonts.scss` and `config/environment.js`.
 
 ## Prerequisites
 
