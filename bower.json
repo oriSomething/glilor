@@ -13,6 +13,7 @@
     "ember-qunit-notifications": "0.0.4",
     "qunit": "~1.15.0",
     "normalize.css": "~3.0.2",
-    "webfontloader": "https://github.com/typekit/webfontloader.git#~1.5.10"
+    "webfontloader": "https://github.com/typekit/webfontloader.git#~1.5.10",
+    "punycode": "~1.3.2"
   }
 }

@@ -4,7 +4,8 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
   vendorFiles: {
-    'webfontloader.js': 'bower_components/webfontloader/webfontloader.js'
+    'webfontloader.js': 'bower_components/webfontloader/webfontloader.js',
+    'punycode.js': 'bower_components/punycode/punycode.js'
   }
 });
 

@@ -1,3 +1,4 @@
+/* global punycode */
 import Ember from 'ember';
 
 export default Ember.Component.extend({
@@ -15,25 +16,22 @@ export default Ember.Component.extend({
   /** Computed properties */
   /** @type {Number} The text length */
   textLength: function() {
-    let text = this.get('text') || '';
-
-    return text.length;
+    return punycode.ucs2.decode(this.get('text')).length;
   }.property('text'),
   /** @type {Array of String} */
   characters: function() {
-    let text = this.get('text') || '',
-      /** Using `length`, but until ES6 support… */
-      len = text.length,
-      characters = '';
+    let charCodes = Ember.A(punycode.ucs2.decode(this.get('text'))),
+      len = charCodes.length,
+      pattern = Ember.A([]);
 
     for (let i = 0; i < len; i++) {
-      let row = (text.substr(i * -1) + text.substr(0, (len - i))).substr(0, len);
+      let row = charCodes.slice(len - i, len)
+        .concat( charCodes.slice(0, (len - i)) );
 
-      characters += row;
+      pattern.pushObjects(row);
     }
 
-    /** The split is wrong, but until ES6 support… */
-    return Ember.A(characters.split(''));
+    return pattern.map(charCode => punycode.ucs2.encode([charCode]));
   }.property('text'),
   /** @type {String} `style` attribute to every single letter */
   charactersStyle: function() {
