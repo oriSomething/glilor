@@ -1,5 +1,7 @@
 /* global $ */
 import Ember from 'ember';
+const { computed } = Ember;
+const { htmlSafe } = Ember.String;
 import ENV from '../config/environment';
 const { LETTER_SIZE_VUINT, DEBOUNCE_RESIZE_UI } = ENV.APP;
 const $window = $(window);
@@ -21,12 +23,13 @@ export default Ember.Component.extend({
 
   /** Computed properties */
   /** @type {String} */
-  style: function() {
+  style: computed('count', 'width', 'height', function() {
     let { width, height, count } = this.getProperties('count', 'width', 'height'),
       unit = width > height ? 'vh' : 'vw';
 
-    return `font-size: ${LETTER_SIZE_VUINT / count}${unit}`;
-  }.property('count', 'width', 'height'),
+    return htmlSafe(`font-size: ${LETTER_SIZE_VUINT / count}${unit}`);
+  }),
+
   /** @type {Number} */
   frameSize: function() {
     let { width, height } = this.getProperties('width', 'height');
@@ -34,11 +37,11 @@ export default Ember.Component.extend({
     return Math.min(width, height);
   }.property('width', 'height'),
   /** @type {String} */
-  frameStyle: function() {
+  frameStyle: computed('frameSize', function() {
     let size = this.get('frameSize');
 
-    return `width: ${size}px; height: ${size}px;`;
-  }.property('frameSize'),
+    return htmlSafe(`width: ${size}px; height: ${size}px;`);
+  }),
 
 
   /** Events */

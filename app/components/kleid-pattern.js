@@ -1,5 +1,7 @@
 /* global punycode */
 import Ember from 'ember';
+const { computed } = Ember;
+const { htmlSafe } = Ember.String;
 
 export default Ember.Component.extend({
   /** Setup properties */
@@ -34,10 +36,10 @@ export default Ember.Component.extend({
     return pattern.map(charCode => punycode.ucs2.encode([charCode]));
   }.property('text'),
   /** @type {String} `style` attribute to every single letter */
-  charactersStyle: function() {
+  charactersStyle: computed('textLength', function() {
     let diveder = this.get('textLength'),
       precentage = 100 / diveder;
 
-    return `width: ${precentage}%; height: ${precentage}%;`;
-  }.property('textLength'),
+    return htmlSafe(`width: ${precentage}%; height: ${precentage}%;`);
+  })
 });
