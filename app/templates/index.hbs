@@ -5,7 +5,7 @@
 {{prop-toggler property="areControlsVisible" action="toggleProperty" class="stretched"}}
 
 {{!-- BEGIN of CONTROLS --}}
-<section {{bind-attr class=":controls :flex__centered areControlsVisible::controls--hide"}}>
+<section class="controls flex__centered {{unless areControlsVisible 'controls--hide'}}">
   {{! Text }}
   {{input value=text maxlength=tMaxLength dir="rtl" class="controls__text-tf"}}
   {{! Families select }}
