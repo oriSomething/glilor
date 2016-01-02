@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'glilor',
     environment: environment,
-    baseURL: '/',
+    baseURL: '/a/glilor',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -12,6 +12,7 @@ module.exports = function(environment) {
     },
 
     APP: {
+      BASE_SHARE_URL: 'http://www.alefalefalef.co.il/a/glilor/',
       DEBOUNCE_UI: 240,
       DEBOUNCE_RESIZE_UI: 60,
       T_MAX_LENGTH: 12,
